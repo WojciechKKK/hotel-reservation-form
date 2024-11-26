@@ -29,3 +29,5 @@ To run this project, using npm:
 $ npm install
 $ npm run dev
 ```
+
+Demo: https://hotel-reservation-form-weco.netlify.app/
