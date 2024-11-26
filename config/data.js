@@ -25,7 +25,10 @@ const ADDITIONAL_VALIDATION_OPTIONS = {
 		errorTextForMin: 'Minimalna liczba gości to 1',
 		errorTextForMax: 'Maksymalna liczba gości to 9',
 	},
-	name: { required: true },
+	name: { 
+		required: true,
+		errorText: 'Wpisz Imię i Nazwisko'
+	},
 	email: { 
 		required: true,
 		errorText: 'Adres e-mail jest nieprawidłowy'

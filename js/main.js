@@ -7,6 +7,7 @@ addEventListener("DOMContentLoaded", (events) => {
   const city = document.getElementById("city");
   const checkInDate = document.getElementById("check-in-date");
   const checkOutDate = document.getElementById("check-out-date");
+  const name = document.getElementById("name");
   const visitors = document.getElementById("visitors");
   const hotel = document.getElementById("hotel");
   const phoneNumber = document.getElementById("phone");
@@ -35,6 +36,7 @@ addEventListener("DOMContentLoaded", (events) => {
     const validators = {
       required: () => validateRequiredFields(formData),
       dates: () => validateDates(checkInDate, checkOutDate),
+      name: () => validateName(name),
       visitors: () => validateVisitors(visitors),
       email: () => validateEmail(email),
       phone: () => validatePhoneNumber(phoneNumber),
@@ -131,6 +133,31 @@ addEventListener("DOMContentLoaded", (events) => {
     return true;
   }
 
+
+  function validateName(name) {
+    const { errorText } = VALIDATIONS.name;
+    
+    if (!name.value.trim()) {
+      errorHandler(name, errorText);
+      return false;
+    };
+
+    const [ firstName, surname, ...rest ]  = name.value.trim().split(" ");
+
+    if (!!rest.length || !firstName || !surname) {
+      errorHandler(name, errorText);
+      return false;
+    };
+
+    const namePattern = /^[a-zA-Z]+$/;
+  
+    if (!namePattern.test(firstName) || !namePattern.test(surname) ) {
+      errorHandler(name, errorText);
+      return false;
+    };
+
+    return true
+  };
 
   function validateVisitors(visitors) {
     const { min, max, errorTextForMin, errorTextForMax } = VALIDATIONS.visitors;
