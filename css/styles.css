@@ -1,0 +1,154 @@
+@import '_variables.css';
+@import '_colors.css';
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: var(--color-page-background);
+}
+
+.form {
+	border-radius: calc(2*var(--default-border-radius));
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	width: var(--form-container-size-small);
+	height: 95vh;
+	padding: var(--default-padding);
+	position: relative;
+}
+
+.form__buttons {
+	padding-top: var(--default-padding);
+	display: flex;
+	justify-content: flex-end;
+	position: absolute;
+	bottom: var(--default-padding);
+	right: var(--default-padding);
+}
+
+/*inputs*/
+#reservation-form input, #reservation-form textarea, #reservation-form select {
+	width: 100%;
+	padding: 15px;
+	font-size: var(--font-text-size-medium);
+	border: 1px solid var(--color-gray-2);
+	border-radius: var(--default-border-radius);
+	box-sizing: border-box;
+	color: var(--color-text);
+}
+
+/*buttons*/
+#reservation-form .button {
+	width: 100px;
+	font-weight: bold;
+	background-color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	border-radius: 50px;
+	padding: 10px;
+	margin-left: 10px;
+  text-decoration: none;
+  font-size: 13px;
+	color: var(--color-text);
+	cursor: pointer;
+	&.button--primary {
+		color: var(--color-white);
+		background-color: var(--primary-color-btn);
+		&:hover {
+			background-color: var(--color-secondary);
+			border: none
+		}
+	}
+	&.button--secondary {
+		color: var(--color-primary);
+		background-color: var(--secondary-color-btn);
+		border: 1px solid var(--color-gray-2);
+		&:hover {
+			background-color: var(--color-gray-0);
+			border: none
+		}
+	}
+}
+
+.form__title {
+	font-family: 'Montserrat', 'sans-serif';
+	font-size: var(--font-text-size-big);
+	color: var(--color-primary);
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.form__group {
+	display: flex;
+	gap: var(--default-padding);
+	justify-content: space-between;
+}
+
+.form__field {
+	width: 100%;
+	font-family: 'Montserrat', 'sans-serif';
+	display: flex;
+	flex-direction: column;
+	padding-top: var(--default-padding);
+
+	&.error input, &.error select, &.error textarea {
+		border: 1px solid var(--color-red-default) !important;
+	}
+
+	.form__error {
+		color: var(--color-red-default);
+		font-size: var(--font-text-size-error);
+		padding-top: 5px;
+	}
+}
+
+.form__label {
+	font-size: var(--font-text-size-error);
+	padding-bottom: 5px;
+}
+
+select, option, textarea, input, button {
+	font-family: 'Montserrat', 'sans-serif';
+}
+
+select {
+	cursor: pointer;
+	-moz-appearance:none; /* Firefox */
+	-webkit-appearance:none; /* Safari and Chrome */
+	appearance: none;
+}
+
+textarea {
+	resize: none;
+}
+
+
+
+/* -----simple mobile styles----- */
+@media only screen and (max-width: 768px){
+	body {
+		height: 100%;
+	}
+
+	.form {
+		margin: var(--default-padding) 0;
+		width: var(--form-container-size-big);
+		height: 100%;
+	}
+	
+	.form__group {
+		display: flex;
+		flex-direction: column;
+		gap: 0
+	}
+
+	.form__buttons {
+		position: sticky;
+	}
+}

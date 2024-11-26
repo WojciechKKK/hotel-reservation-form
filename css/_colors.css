@@ -1,0 +1,27 @@
+:root {
+	/* primary colors */
+	--color-primary: #121f43;
+	--color-secondary: #33f59c;
+	--color-white: #ffffff;
+	--color-text: #18181b;
+	--color-error-message: var(--color-red-default);
+
+	/* secondary colors */
+	--color-gray-0: #f1f1f1;
+	--color-gray-1: #eae9eb;
+	--color-gray-2: #c7c9cb;
+
+	/* button colors */
+	--primary-color-btn: var(--color-primary);
+	--secondary-color-btn: var(--color-white);
+
+	/* helper colors */
+	--color-page-background: #f9fafbbb;
+
+	/* other colors */
+	--color-green-default: #00886f;
+	--color-green-hover: #33a08c;
+	
+	--color-red-default: #f1354e;
+	--color-red-hover: #bd1c3f;
+}

@@ -1,0 +1,11 @@
+:root {
+	--font-text-size-small: 10px;
+	--font-text-size-medium: 15px;
+	--font-text-size-big: 25px;
+	--font-text-size-error: 12px;
+	--default-border-radius: 10px;
+	--default-padding: 20px;
+
+	--form-container-size-small: 60vw;
+	--form-container-size-big: 90vw
+}

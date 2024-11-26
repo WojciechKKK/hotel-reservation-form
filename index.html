@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="W.K." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="hotele, rezerwacja, wyszukiwarka hoteli">
+  <meta name="description" content="Wyszukiwarka hoteli z możliwością rezerwacji.">
+
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+  <title>Weco-Travel | Rezerwacja Hotelu</title>
+  <script type="module" src="js/main.js" defer></script>
+</head>
+
+  <body>
+    <div class="form">
+      <h2 class="form__title">Rezerwacja Hotelu</h2>
+      <form id="reservation-form">
+        <!-- <fieldset> -->
+          <div class="form__section">
+
+            <!-- Location Selection -->
+            <div class="form__group">
+              <div class="form__field">
+                <select name="city" id="city" placeholder="Miasto">
+                  <option hidden selected value>Wybierz miasto</option>
+                  <option value="warszawa">Warszawa</option>
+                  <option value="krakow">Kraków</option>
+                  <option value="gdansk">Gdańsk</option>
+                  <option value="szczecin">Szczecin</option>
+                  <option value="wroclaw">Wrocław</option>
+                  <option value="katowice">Katowice</option>
+                </select>
+                <small class="form__error"></small>
+              </div>
+
+              <div class="form__field">
+                <select disabled="true" name="hotel" id="hotel" placeholder="Hotel">
+                  <option hidden selected value>Wybierz hotel</option>
+                </select>
+                <small class="form__error"></small>
+              </div>
+            </div>
+  
+            <!-- Dates -->
+            <div class="form__group">
+              <div class="form__field">
+                <label class="form__label" for="check-in-date">Data zameldowania</label>
+                <input type="date" id="check-in-date" name="check-in-date" />
+                <small class="form__error"></small>
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="check-out-date">Data wymeldowania</label>
+                <input type="date" id="check-out-date" name="check-out-date" />
+                <small class="form__error"></small>
+              </div>
+            </div>
+
+            <!-- Guest Information -->
+            <div class="form__group">
+              <div class="form__field">
+                <!-- add required ? -->
+                <input type="text" name="name" id="name" placeholder="Imię i nazwisko" />
+                <small class="form__error"></small>
+              </div>
+
+              <div class="form__field">
+                <!-- add min="1" max="9"?  -->
+              <input type="number" name="visitors" id="visitors" placeholder="Podaj liczbę gości" />
+              <small class="form__error"></small>
+              </div>
+            </div>
+                  
+            <!-- Contact Information -->
+            <div class="form__group">
+              <div class="form__field">
+                <!-- add type="email"? -->
+                <input type="text" name="email" id="email" placeholder="E-mail" />
+                <small class="form__error"></small>
+              </div>
+
+              <div class="form__field">
+                <input type="tel" name="phone" id="phone" placeholder="Numer telefonu xxx-xxx-xxx" />
+                <small class="form__error"></small>
+              </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="form__field">
+              <label class="form__label" for="comment">Dodatkowe informacje...</label>
+              <textarea type="text" name="comment" id="comment" maxlength="250" rows="4" cols="5"
+                placeholder="komentarz..."></textarea>
+              <small class="form__error"></small>
+            </div>
+          </div>
+
+          <div class="form__buttons">
+            <!-- <button type="reset" class="button button--secondary" value="Reset">Reset</button> -->
+            <button class="button button--secondary" type="button" onclick="window.history.back()">
+              Anuluj
+            </button>
+            <button type="submit" class="button button--primary">
+              Zarezerwuj
+            </button>
+          </div>
+        <!-- </fieldset> -->
+
+      </form>
+    </div>
+  </body>
+
+</html>
